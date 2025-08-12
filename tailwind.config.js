@@ -1,15 +1,14 @@
-
 module.exports = {
   content: ['./app/**/*.{js,ts,jsx,tsx,mdx}'],
   theme: {
     extend: {
       colors: {
-        primary: 'hsl(210, 80%, 50%)',
-        accent: 'hsl(30, 90%, 60%)',
-        bg: 'hsl(210, 30%, 95%)',
+        primary: 'hsl(210, 80%, 45%)', // Slightly darker for better contrast
+        accent: 'hsl(30, 90%, 55%)', // Slightly darker for better contrast
+        bg: 'hsl(210, 30%, 96%)',
         surface: 'hsl(0, 0%, 100%)',
-        textPrimary: 'hsl(210, 20%, 20%)',
-        textSecondary: 'hsl(210, 20%, 40%)',
+        textPrimary: 'hsl(210, 20%, 15%)', // Darker for better contrast
+        textSecondary: 'hsl(210, 20%, 35%)', // Darker for better contrast
       },
       fontSize: {
         'display': ['2.25rem', { lineHeight: '2.5rem', fontWeight: '700' }],
@@ -38,6 +37,8 @@ module.exports = {
         'fade-in': 'fadeIn 0.2s ease-in-out',
         'slide-up': 'slideUp 0.4s ease-in-out',
         'bounce-in': 'bounceIn 0.6s ease-out',
+        'shimmer': 'shimmer 2s infinite',
+        'count-up': 'countUp 0.6s ease-out',
       },
       keyframes: {
         spinWheel: {
@@ -56,6 +57,15 @@ module.exports = {
           '0%': { transform: 'scale(0.3)', opacity: '0' },
           '50%': { transform: 'scale(1.05)' },
           '70%': { transform: 'scale(0.9)' },
+          '100%': { transform: 'scale(1)', opacity: '1' },
+        },
+        shimmer: {
+          '0%': { transform: 'translateX(-100%)' },
+          '100%': { transform: 'translateX(100%)' },
+        },
+        countUp: {
+          '0%': { transform: 'scale(0.8)', opacity: '0' },
+          '50%': { transform: 'scale(1.1)', opacity: '1' },
           '100%': { transform: 'scale(1)', opacity: '1' },
         },
       },
