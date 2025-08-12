@@ -1,4 +1,3 @@
-
 'use client'
 
 import { useEffect, useState, useCallback } from 'react'
@@ -177,7 +176,7 @@ export default function SpinSparkApp() {
         {activeTab === 'spin' ? (
           <div className="space-y-xl">
             {/* Token Display */}
-            <TokenDisplay tokens={currentUser.sparkTokens} variant="detailed" />
+            <TokenDisplay tokens={currentUser.sparkTokens} variant="detailed" animate={true} />
             
             {/* Cooldown Timer */}
             {!canSpin && (
@@ -206,14 +205,14 @@ export default function SpinSparkApp() {
             
             {/* Quick Stats */}
             <div className="grid grid-cols-2 gap-md">
-              <div className="card text-center">
+              <div className="interactive-card text-center glow-effect">
                 <Users className="w-6 h-6 text-primary mx-auto mb-sm" />
-                <p className="text-heading">#{userRank || '---'}</p>
+                <p className="text-heading font-bold">#{userRank || '---'}</p>
                 <p className="text-caption text-textSecondary">Your Rank</p>
               </div>
-              <div className="card text-center">
+              <div className="interactive-card text-center glow-effect">
                 <Trophy className="w-6 h-6 text-accent mx-auto mb-sm" />
-                <p className="text-heading">{leaderboard.length}</p>
+                <p className="text-heading font-bold">{leaderboard.length}</p>
                 <p className="text-caption text-textSecondary">Total Players</p>
               </div>
             </div>
